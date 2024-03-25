@@ -99,7 +99,7 @@
 
 		- [ ] iv.) Return the Boolean value True if thedeposit transaction is successful and False ifthe transaction is unsuccessful (didn’t change account balance).
 
-	- [ ] f.) defwithdraw(self, amount):
+	- [ ] f.) def withdraw(self, amount):
 
 		- [ ] i.) This should decrease theaccount balance by the specified amount.
 
@@ -123,7 +123,7 @@
 
 	- [ ] j.) def set_name(self, value):
 
-		i. This should set the account name to the value provided.
+		- [ ] i. This should set the account name to the value provided.
 
 	- [ ] k.) def__str__(self):
 
