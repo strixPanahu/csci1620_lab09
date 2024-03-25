@@ -11,7 +11,7 @@
 
 - [ ] 1.) Inside accounts.py, create a class named Account with the methods below.
 
-	- [ ] a.) def_ init__(self, name, balance=0):
+	- [ ] a.) def init__(self, name, balance=0):
 
 		- [ ] i.) This should be used to set the default values for each account object.
 
@@ -56,14 +56,14 @@
 
 		- [ ] i.) This should set the account name to the value provided.
  
-	- [ ] h.) def__str__ (self):
+	- [ ] h.) def __str__ (self):
 
 		- [ ] i.) This should return the account details (use getter methods where applicable).
 
 		- [ ] ii.) Check main.py for the format of the string to be returned. 
 
 
-- [ ] 2.) Inside accounts.py, create another class named SavingAccount with the variables and methods below (SavingAccount should be designed as a child ofAccount).
+- [ ] 2.) Inside accounts.py, create another class named SavingAccount with the variables and methods below (SavingAccount should be designed as a child of Account).
 
 	- [ ] a.) MINIMUM:
 
@@ -77,7 +77,7 @@
 
 		- [ ] ii.) It’s the interest rate to be applied to the account balance when applicable.
 
-	- [ ] c.) def_ init__(self, name):
+	- [ ] c.) def __init__(self, name):
 
 		- [ ] i.) This should be used to set the default values for each saving account object.
 
