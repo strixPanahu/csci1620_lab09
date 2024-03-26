@@ -11,7 +11,7 @@
 class Account:
     def __init__(self, name, balance=0):
         """
-        Customer account with Name & Balance. Initial balance defaults to zero, if negative value provided
+        Customer account with Name & Balance. Initial balance defaults to policy minimum, if Balance is insufficient
         :param name: Customer Name (String)
         :param balance: Initial Balance (+float); if invalid value provided, defaults to policy Minimum
         """
@@ -80,10 +80,6 @@ class SavingAccount(Account):
     RATE = .02
 
     def __init__(self, name):
-        """
-        Customer savings account with Name & Balance. Initial balance defaults to Minimum, if insufficient
-        :param name: Customer Name (String)
-        """
         super().__init__(name)
 
         self._account_name = None
@@ -103,11 +99,6 @@ class SavingAccount(Account):
         self.set_balance(super().get_balance() * (1 + self.RATE))
 
     def deposit(self, amount):
-        """
-        Override super
-        :param amount:
-        :return:
-        """
         if super().deposit(amount):
             self._deposit_count += 1
             if self._deposit_count == 5:
@@ -119,11 +110,6 @@ class SavingAccount(Account):
             return False
 
     def withdraw(self, amount):
-        """
-        Override super
-        :param amount:
-        :return:
-        """
         minimum_balance = amount + self.MINIMUM
         if self.MINIMUM <= minimum_balance <= super().get_balance():
             super().withdraw(amount)
