@@ -68,7 +68,9 @@ class SavingAccount(Account):
 
     def withdraw(self, amount):
         """
-        Override super
+        @Override super
+        :param amount:
+        :return:
         """
         return 0
 
