@@ -82,15 +82,8 @@ class SavingAccount(Account):
     def __init__(self, name):
         super().__init__(name)
 
-        self._account_name = None
-        self._account_balance = None
-
-        self.set_name(name)
         self.set_balance(self.MINIMUM)
         self._deposit_count = 0
-
-        if self.MINIMUM != self.get_balance():
-            print("Error setting balance of " + str(self.MINIMUM) + "; defaulted to " + str(super().get_balance()))
 
     def apply_interest(self):
         """
