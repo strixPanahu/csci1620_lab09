@@ -126,8 +126,3 @@ class SavingAccount(Account):
 
     def __str__(self):
         return "SAVING ACCOUNT: " + super().__str__()
-
-
-test = SavingAccount("Steph")
-print(test.withdraw(18.5))
-print(test)
