@@ -105,8 +105,7 @@ class SavingAccount(Account):
     def withdraw(self, amount):
         minimum_balance = amount + self.MINIMUM
         if self.MINIMUM <= minimum_balance <= super().get_balance():
-            super().withdraw(amount)
-            return True
+            return super().withdraw(amount)
         else:
             return False
 
@@ -127,3 +126,8 @@ class SavingAccount(Account):
 
     def __str__(self):
         return "SAVING ACCOUNT: " + super().__str__()
+
+
+test = SavingAccount("Steph")
+print(test.withdraw(18.5))
+print(test)
