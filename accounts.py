@@ -15,8 +15,8 @@ class Account:
         :param name: Customer Name (String)
         :param balance: Initial Balance (+float); if invalid value provided, defaults to policy Minimum
         """
-        self._account_name = None
-        self._account_balance = None
+        self.__account_name = None
+        self.__account_balance = None
 
         self.set_name(name)
         self.set_balance(balance)
@@ -49,13 +49,13 @@ class Account:
             return False
 
     def get_balance(self):
-        return self._account_balance
+        return self.__account_balance
 
     def get_name(self):
-        return self._account_name
+        return self.__account_name
 
     def set_name(self, value):
-        self._account_name = str(value)
+        self.__account_name = str(value)
 
     def set_balance(self, value):
         """
@@ -63,9 +63,9 @@ class Account:
         :param value: Value in currency (+float); set to default if less than policy Minimum
         """
         if value > 0:
-            self._account_balance = float(value)
+            self.__account_balance = float(value)
         else:
-            self._account_balance = 0
+            self.__account_balance = 0
 
     def __str__(self):
         """
@@ -83,7 +83,7 @@ class SavingAccount(Account):
         super().__init__(name)
 
         self.set_balance(self.MINIMUM)
-        self._deposit_count = 0
+        self.__deposit_count = 0
 
     def apply_interest(self):
         """
@@ -93,10 +93,10 @@ class SavingAccount(Account):
 
     def deposit(self, amount):
         if super().deposit(amount):
-            self._deposit_count += 1
-            if self._deposit_count == 5:
+            self.__deposit_count += 1
+            if self.__deposit_count == 5:
                 self.apply_interest()
-                self._deposit_count = 0
+                self.__deposit_count = 0
 
             return True
         else:
