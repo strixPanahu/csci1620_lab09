@@ -103,8 +103,7 @@ class SavingAccount(Account):
             return False
 
     def withdraw(self, amount):
-        minimum_balance = amount + self.MINIMUM
-        if self.MINIMUM <= minimum_balance <= super().get_balance():
+        if (amount + self.MINIMUM) <= super().get_balance():
             return super().withdraw(amount)
         else:
             return False
