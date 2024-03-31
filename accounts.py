@@ -109,15 +109,6 @@ class SavingAccount(Account):
         else:
             return False
 
-    def get_balance(self):
-        return super().get_balance()
-
-    def get_name(self):
-        return super().get_name()
-
-    def set_name(self, value):
-        super().set_name(value)
-
     def set_balance(self, value):
         if value > self.MINIMUM:
             super().set_balance(value)
@@ -126,3 +117,12 @@ class SavingAccount(Account):
 
     def __str__(self):
         return "SAVING ACCOUNT: " + super().__str__()
+
+
+test = SavingAccount("me")
+test.deposit(50)
+print(test.withdraw(10))
+print(test.get_balance())
+print(test.withdraw(0))
+print(test.get_balance())
+
